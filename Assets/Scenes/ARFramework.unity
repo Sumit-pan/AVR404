@@ -890,7 +890,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &184577158
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1193,8 +1193,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42d72bf5508838847bc4013c4d55df0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  editMode: {fileID: 0}
-  selectImage: {fileID: 0}
+  themePanelName: Main
+  foodDatabase: {fileID: 1939123107}
+  trackedImageFoodManager: {fileID: 1982542173}
 --- !u!1 &565915130
 GameObject:
   m_ObjectHideFlags: 0
@@ -2654,9 +2655,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c82917a4feefcb448acf64c050bf255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextMode: Scan
+  nextMode: Main
   startupPanelName: Startup
-  nextPanelName: Scan
+  nextPanelName: Main
   autoAdvanceDelay: 1.5
 --- !u!1 &1346962773
 GameObject:
@@ -3583,7 +3584,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodItems:
-  - markerName: BurgerMarker
+  - theme: 1
+    markerName: PizzaMarker
+    itemName: Hot Dog
+    description: A classic American hot dog served with a soft bun.
+    calories: 390
+    protein: 14
+    carbs: 24
+    fat: 21
+    foodPrefab: {fileID: 1000011728207858, guid: 180079041c49091489282ea6ecb31fbe, type: 3}
+  - theme: 1
+    markerName: BurgerMarker
     itemName: Burger
     description: This is a burger
     calories: 550
@@ -3591,7 +3602,17 @@ MonoBehaviour:
     carbs: 26
     fat: 23
     foodPrefab: {fileID: 1000011448446114, guid: 8155176e03f33f44884efb0dd767197c, type: 3}
-  - markerName: PizzaMarker
+  - theme: 1
+    markerName: TacoMarker
+    itemName: Fries
+    description: Golden fries with a crispy outside and fluffy center.
+    calories: 365
+    protein: 4
+    carbs: 48
+    fat: 17
+    foodPrefab: {fileID: 1000011662427292, guid: 9b21be590f33e0d4ba19fec73ce555da, type: 3}
+  - theme: 2
+    markerName: BurgerMarker
     itemName: Pizza
     description: This is a pizza
     calories: 600
@@ -3599,7 +3620,26 @@ MonoBehaviour:
     carbs: 45
     fat: 35
     foodPrefab: {fileID: 1000012023308628, guid: 2a79153a0e896724caa73afa19f708c8, type: 3}
-  - markerName: TacoMarker
+  - theme: 2
+    markerName: PizzaMarker
+    itemName: Bread
+    description: Rustic Italian bread with a warm, bakery-style finish.
+    calories: 220
+    protein: 7
+    carbs: 43
+    fat: 2
+    foodPrefab: {fileID: 1000011922516296, guid: 07c1ce2b91eb18f4c83d7d36268a0341, type: 3}
+  - theme: 2
+    markerName: TacoMarker
+    itemName: Cheese Plate
+    description: A savory cheese selection inspired by an Italian aperitivo.
+    calories: 320
+    protein: 18
+    carbs: 3
+    fat: 26
+    foodPrefab: {fileID: 1000011685305428, guid: 8d8015ded5f690247a600cc376e7b0e8, type: 3}
+  - theme: 3
+    markerName: BurgerMarker
     itemName: Tacos
     description: This is a taco
     calories: 350
@@ -3607,6 +3647,52 @@ MonoBehaviour:
     carbs: 15
     fat: 10
     foodPrefab: {fileID: 1000011323704582, guid: 927b358a489fa874780f1278268d7bfb, type: 3}
+  - theme: 3
+    markerName: PizzaMarker
+    itemName: Chili
+    description: A hearty bowl of chili with bold spices and slow-cooked flavor.
+    calories: 290
+    protein: 16
+    carbs: 22
+    fat: 12
+    foodPrefab: {fileID: 1000011403359484, guid: a2a488e7caca6bd4280bf13b8e973858, type: 3}
+  - theme: 3
+    markerName: TacoMarker
+    itemName: Chips
+    description: Crunchy tortilla-style chips perfect for a quick snack.
+    calories: 280
+    protein: 4
+    carbs: 32
+    fat: 15
+    foodPrefab: {fileID: 1000011994954864, guid: d86ca81cf8e2b784c8d58502235ee8b3, type: 3}
+  - theme: 4
+    markerName: BurgerMarker
+    itemName: Sushi
+    description: Fresh sushi rolls presented as a light and balanced dish.
+    calories: 300
+    protein: 14
+    carbs: 38
+    fat: 5
+    foodPrefab: {fileID: 1000011639687088, guid: 44f60cf25f94eed4a98f3dcc6e5d04fc, type: 3}
+  - theme: 4
+    markerName: PizzaMarker
+    itemName: Maki
+    description: Bite-sized maki rolls with a clean, delicate finish.
+    calories: 260
+    protein: 9
+    carbs: 33
+    fat: 7
+    foodPrefab: {fileID: 1000011555957014, guid: bf960492e4c076c458d1ba649dc26577, type: 3}
+  - theme: 4
+    markerName: TacoMarker
+    itemName: Onigiri
+    description: A simple Japanese rice ball that is easy to recognize in AR.
+    calories: 240
+    protein: 5
+    carbs: 45
+    fat: 2
+    foodPrefab: {fileID: 1000011604991304, guid: b93286b7dfa93834caec88d1044606c2, type: 3}
+  activeTheme: 0
 --- !u!4 &1939123108
 Transform:
   m_ObjectHideFlags: 0
@@ -3792,8 +3878,10 @@ MonoBehaviour:
   mainUI: {fileID: 184577157}
   scanPanelName: Scan
   trackedFoodPanelName: FoodInfo
+  themePanelName: Main
   scanModeName: Scan
   trackedFoodModeName: FoodInfo
+  themeModeName: Main
   spawnOffset: {x: 0, y: 0.05, z: 0}
   rotateSpawnedFood: 1
   rotationSpeed: 45
